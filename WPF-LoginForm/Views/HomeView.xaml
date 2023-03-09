@@ -30,10 +30,8 @@
             </StackPanel>
         </Border>
         <Border Grid.Column="1">
-            <m:Map x:Name="myMap" Margin="10,10,10,111" FontFamily="Arial">
-                <m:Map.Foreground>
-                    <ImageBrush/>
-                </m:Map.Foreground>
+            <m:Map x:Name="myMap" Margin="10,10,10,111" FontFamily="Arial"
+                   CredentialsProvider="45fPRdARyErm6xKcI77N~BsFC2hL1XZ-w3pv3jTJCZw~Alcj0jdfgpYl9RKvBZ1L01BKlGQPeSiPO9PLJhqEgmZHnbi2T-42rN9zNvlUkwDc">
             </m:Map>
         </Border>
     </Grid>
