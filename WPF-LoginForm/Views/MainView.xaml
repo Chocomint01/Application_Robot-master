@@ -85,7 +85,7 @@
                                  Command="{Binding ShowLocalisationViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="LocationDot" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Localisation - Zone" Style="{StaticResource menuButtonText}"/>
+                            <TextBlock Text="Surveillance" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 
@@ -105,7 +105,7 @@
                                  Command="{Binding ShowHomeViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="ClockRotateLeft" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Historique - Logs" Style="{StaticResource menuButtonText}"/>
+                            <TextBlock Text="Historique" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 
@@ -115,7 +115,7 @@
                                  Command="{Binding ShowHomeViewCommand}">
                         <StackPanel Orientation="Horizontal">
                             <fa:IconImage Icon="CircleInfo" Style="{StaticResource menuButtonIcon}"/>
-                            <TextBlock Text="Information" Style="{StaticResource menuButtonText}"/>
+                            <TextBlock Text="Information Robot" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 

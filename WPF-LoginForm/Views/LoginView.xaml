@@ -261,7 +261,7 @@
                                FontFamily="Montserrat"
                                Cursor="Hand"
                                Margin="8,0,0,0"/>
-                        
+
 
                     </StackPanel>
 
@@ -277,7 +277,7 @@
                                 Click="Button_Click">
                             Creer un compte
                         </Button>
-                        
+
 
                     </StackPanel>
 
@@ -285,11 +285,11 @@
 
                 <Grid Grid.Row="2">
                     <TextBlock HorizontalAlignment="Right"
-                               VerticalAlignment="Bottom" Margin="0,0,10,2"
+                               VerticalAlignment="Top" Margin="0,21,10,0"
                                FontSize="10"
                                FontStyle="Normal"
                                FontWeight="Bold"
-                               Foreground="#4C566A">Version 1.0.2</TextBlock>
+                               Foreground="#4C566A">Version 1.0.4</TextBlock>
                 </Grid>
 
 

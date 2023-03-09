@@ -10,29 +10,68 @@
              >
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Border Grid.Column="0">
-            <StackPanel>
-                <StackPanel Orientation="Horizontal"
-                                Height="35"
-                                Margin="15,25,0,40">
-                    <TextBlock Text="Mon Robot"
-                                   Foreground="{Binding Caption}"
-                                   FontSize="20"
-                                   FontFamily="Montserrat"
-                                   FontWeight="Medium"
-                                   VerticalAlignment="Center"
-                                   Margin="10,0,0,0"/>
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="120" />
+        </Grid.RowDefinitions>
 
-                </StackPanel>
+        <Border Grid.Column="0" BorderBrush="Gray" BorderThickness="1" CornerRadius="10" Grid.RowSpan="3">
+            <StackPanel Margin="9,9,9,9">
+                <TextBlock Text="Information"
+                                       Foreground="#2C2F33"
+                                       FontSize="20"
+                                       FontFamily="Montserrat"
+                                       FontWeight="Medium"
+                                       VerticalAlignment="Center"
+                           HorizontalAlignment="Center"/>
+                <TextBlock Text="Température :"
+                                       Foreground="#2C2F33"
+                                       FontSize="16"
+                                       FontFamily="Montserrat" Width="262"/>
+                <TextBlock Text="----" Margin="10 0 10 10"
+                                       Foreground="#2C2F33"
+                                       FontSize="16"
+                                       FontFamily="Montserrat" Width="262"/>
+                <TextBlock Text="Vitesse du véhicule :"
+                                       Foreground="#2C2F33"
+                                       FontSize="16"
+                                       FontFamily="Montserrat" Width="262"/>
+                <TextBlock Text="----"  Margin="10 0 10 10"
+                                       Foreground="#2C2F33"
+                                       FontSize="16"
+                                       FontFamily="Montserrat" Width="262"/>
+                <TextBlock Text="Coordonnée :"
+                                       Foreground="#2C2F33"
+                                       FontSize="16"
+                                       FontFamily="Montserrat" Width="262"/>
+                <TextBlock Text="x: -----" Margin="10 0 10 0"
+                                       Foreground="#2C2F33"
+                                       FontSize="14"
+                                       FontFamily="Montserrat" Width="217"/>
+                <TextBlock Text="y: ----" Margin="10 0 10 10"
+                                       Foreground="#2C2F33"
+                                       FontSize="14"
+                                       FontFamily="Montserrat" Width="217"/>
+
+                <TextBlock Text="Autre :"
+                                       Foreground="#2C2F33"
+                                       FontSize="16"
+                                       FontFamily="Montserrat" Width="262"/>
+
+
             </StackPanel>
         </Border>
-        <Border Grid.Column="1">
-            <m:Map x:Name="myMap" Margin="10,10,10,111" FontFamily="Arial"
-                   CredentialsProvider="45fPRdARyErm6xKcI77N~BsFC2hL1XZ-w3pv3jTJCZw~Alcj0jdfgpYl9RKvBZ1L01BKlGQPeSiPO9PLJhqEgmZHnbi2T-42rN9zNvlUkwDc">
-            </m:Map>
+        
+        <Border CornerRadius="10" Grid.Column="2">
+            <m:Map  x:Name="myMap" BorderBrush="Gray" BorderThickness="1" FontFamily="Arial"
+                   CredentialsProvider="45fPRdARyErm6xKcI77N~BsFC2hL1XZ-w3pv3jTJCZw~Alcj0jdfgpYl9RKvBZ1L01BKlGQPeSiPO9PLJhqEgmZHnbi2T-42rN9zNvlUkwDc"/>
+        </Border>
+        <Border Grid.Column="2" Grid.Row="2" BorderBrush="Gray" BorderThickness="1" CornerRadius="10">
         </Border>
     </Grid>
 </UserControl>
