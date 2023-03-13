@@ -65,13 +65,25 @@ namespace WPF_LoginForm.Views
 
         private void Ellipse_MouseDown(object sender, MouseButtonEventArgs e)
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog();
-            if (openFileDialog.ShowDialog() == true)
-            {
-                ImageBrush imageBrush = (ImageBrush)ellipse.Fill;
-                imageBrush.ImageSource = new BitmapImage(new Uri(openFileDialog.FileName));
-            }
         }
+        private bool isContextMenuOpen = false;
+
+        private void btnContextMenu_Click(object sender, RoutedEventArgs e)
+        {
+            isContextMenuOpen = !isContextMenuOpen; // inverser l'état du Popup
+            popupContextMenu.IsOpen = isContextMenuOpen; // afficher ou masquer le Popup en fonction de l'état
+        }
+        private void btnDeconnexion_Click(object sender, RoutedEventArgs e)
+        {
+
+            // Créer une instance de la fenêtre de connexion
+            LoginView loginView = new LoginView();
+
+            // Afficher la fenêtre de connexion
+            loginView.Show();
+            Window.GetWindow(this).Close();
+        }
+
 
     }
 }

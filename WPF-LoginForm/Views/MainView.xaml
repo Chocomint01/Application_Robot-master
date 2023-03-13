@@ -46,7 +46,7 @@
             </Grid.ColumnDefinitions>
             <!--Menu de navigation-->
             <Border CornerRadius="10,0,0,10"
-                    Grid.Column="0" Margin="0,10,0,-10">
+                    Grid.Column="0">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
                         <GradientStop Color="#282b30" Offset="0"/>
@@ -57,72 +57,54 @@
 
                     <!--Logo-->
                     <StackPanel Orientation="Horizontal"
-                                Height="35"
-                                Margin="15,25,0,40">
+                Height="35"
+                Margin="15,25,0,40">
                         <TextBlock Text="PROJET ROBOT"
-                                   Foreground="{StaticResource titleColor2}"
-                                   FontSize="20"
-                                   FontFamily="Montserrat"
-                                   FontWeight="Medium"
-                                   VerticalAlignment="Center"
-                                   Margin="10,0,0,0"/>
+                   Foreground="{StaticResource titleColor2}"
+                   FontSize="20"
+                   FontFamily="Montserrat"
+                   FontWeight="Medium"
+                   VerticalAlignment="Center"
+                   Margin="10,0,0,0"/>
                     </StackPanel>
 
-                    <!--Menu des Bouttons-->
-                    <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color1}"
-                                 IsChecked="True"
-                                 Command="{Binding ShowHomeViewCommand}">
+                    <!--Menu des Boutons-->
+                    <RadioButton Style="{StaticResource menuButton}" Tag="{StaticResource color1}" IsChecked="True" Command="{Binding ShowHomeViewCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}"/>
+                            <fa:IconImage Icon="Home" Style="{StaticResource menuButtonIcon}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"/>
                             <TextBlock Text="Tableau De Bord" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 
-                    <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color2}"
-                                 IsChecked="True"
-                                 Command="{Binding ShowLocalisationViewCommand}">
+                    <RadioButton Style="{StaticResource menuButton}" Tag="{StaticResource color2}" IsChecked="True" Command="{Binding ShowLocalisationViewCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="LocationDot" Style="{StaticResource menuButtonIcon}"/>
+                            <fa:IconImage Icon="LocationDot" Style="{StaticResource menuButtonIcon}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"/>
                             <TextBlock Text="Surveillance" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 
-                    <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color3}"
-                                 IsChecked="True"
-                                 Command="{Binding ShowHomeViewCommand}">
+                    <RadioButton Style="{StaticResource menuButton}" Tag="{StaticResource color3}" IsChecked="True" Command="{Binding ShowHomeViewCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="sliders" Style="{StaticResource menuButtonIcon}"/>
+                            <fa:IconImage Icon="sliders" Style="{StaticResource menuButtonIcon}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"/>
                             <TextBlock Text="Paramétres" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 
-                    <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color4}"
-                                 IsChecked="True"
-                                 Command="{Binding ShowHomeViewCommand}">
+                    <RadioButton Style="{StaticResource menuButton}" Tag="{StaticResource color4}" IsChecked="True" Command="{Binding ShowHomeViewCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="ClockRotateLeft" Style="{StaticResource menuButtonIcon}"/>
+                            <fa:IconImage Icon="ClockRotateLeft" Style="{StaticResource menuButtonIcon}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"/>
                             <TextBlock Text="Historique" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
 
-                    <RadioButton Style="{StaticResource menuButton}"
-                                 Tag="{StaticResource color5}"
-                                 IsChecked="True"
-                                 Command="{Binding ShowHomeViewCommand}">
+                    <RadioButton Style="{StaticResource menuButton}" Tag="{StaticResource color5}" IsChecked="True" Command="{Binding ShowHomeViewCommand}">
                         <StackPanel Orientation="Horizontal">
-                            <fa:IconImage Icon="CircleInfo" Style="{StaticResource menuButtonIcon}"/>
+                            <fa:IconImage Icon="CircleInfo" Style="{StaticResource menuButtonIcon}" Foreground="{Binding Foreground, RelativeSource={RelativeSource AncestorType={x:Type RadioButton}}}"/>
                             <TextBlock Text="Information Robot" Style="{StaticResource menuButtonText}"/>
                         </StackPanel>
                     </RadioButton>
-
-
                 </StackPanel>
             </Border>
-
             <!--Page actuelle-->
             <Border CornerRadius="0,10,10,0"
                     Grid.Column="1">
@@ -204,7 +186,7 @@
                                     VerticalAlignment="Center"
                                     Margin="0,0,10,0">
 
-                            <Button x:Name="btnContextMenu" Style="{StaticResource iconButton}" Tag="{StaticResource color1}">
+                            <Button x:Name="btnContextMenu" Style="{StaticResource iconButton}" Tag="{StaticResource color1}" Click="btnContextMenu_Click">
                                 <fa:IconImage Icon="AngleDown" Height="12" Width="12" Style="{StaticResource iconButtonIcon}"/>
                                 <Button.ContextMenu>
                                     <ContextMenu x:Name="cmContextMenu">
@@ -213,17 +195,33 @@
                                 </Button.ContextMenu>
                             </Button>
 
+
+
+                            <Popup x:Name="popupContextMenu" PlacementTarget="{Binding ElementName=btnContextMenu}" Placement="Bottom" StaysOpen="False">
+                                <Border Background="White" BorderBrush="#E6E6E6" BorderThickness="1" Margin="0,-5" Padding="5">
+                                    <StackPanel>
+                                        <TextBlock Text="Mon Compte"/>
+                                        <Button Content="Afficher mon profil" Background="White" BorderThickness="0" BorderBrush="Transparent" Margin="0,5"/>
+                                        <Button Content="Changer de mot de passe" Background="White" BorderThickness="0" Margin="0,5"/>
+                                        <Button Content="Se déconnecter" Click="btnDeconnexion_Click" Background="White" BorderThickness="0" Margin="0,5"/>
+                                    </StackPanel>
+                                </Border>
+                            </Popup>
+
+
+
+
+
                             <TextBlock Text="{Binding CurrentUserAccount.DisplayName}"
                                        Foreground="#2C2F33"
                                        FontFamily="Montserrat"
                                        FontSize="12"
                                        VerticalAlignment="Center"/>
 
-                            <Ellipse x:Name="ellipse" Height="35" Width="35" Stroke="{StaticResource color2}" StrokeThickness="2" Margin="10,0,10,0" MouseDown="Ellipse_MouseDown">
-                                <Ellipse.Fill>
-                                    <ImageBrush ImageSource="/Images/profile-picture.png"/>
-                                </Ellipse.Fill>
-                            </Ellipse>
+                            <fa:IconImage Margin="5" Icon="User" Style="{StaticResource iconButtonIcon}"/>
+                            
+                            
+
 
                             <Button Style="{StaticResource iconButton}"
                                     Tag="{StaticResource color4}">
@@ -231,7 +229,7 @@
                             </Button>
 
                         </StackPanel>
-                        
+
                     </Grid>
 
                     <ContentControl Content="{Binding CurrentChildView}"
@@ -239,7 +237,7 @@
                                     Margin="25"/>
 
                 </Grid>
-                
+
             </Border>
         </Grid>
 
