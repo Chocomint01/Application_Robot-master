@@ -70,8 +70,8 @@ namespace WPF_LoginForm.Views
 
         private void btnContextMenu_Click(object sender, RoutedEventArgs e)
         {
-            isContextMenuOpen = !isContextMenuOpen; // inverser l'état du Popup
-            popupContextMenu.IsOpen = isContextMenuOpen; // afficher ou masquer le Popup en fonction de l'état
+            //isContextMenuOpen = !isContextMenuOpen; // inverser l'état du Popup
+            //popupContextMenu.IsOpen = isContextMenuOpen; // afficher ou masquer le Popup en fonction de l'état
         }
         private void btnDeconnexion_Click(object sender, RoutedEventArgs e)
         {

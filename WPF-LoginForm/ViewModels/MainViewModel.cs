@@ -9,6 +9,7 @@ using System.Windows;
 using System.Windows.Input;
 using WPF_LoginForm.Models;
 using WPF_LoginForm.Repositories;
+using WPF_LoginForm.Views;
 
 namespace WPF_LoginForm.ViewModels
 {
@@ -75,7 +76,9 @@ namespace WPF_LoginForm.ViewModels
 
         public ICommand ShowHomeViewCommand { get; }
         public ICommand ShowLocalisationViewCommand { get; }
-
+        public ICommand ShowHistoriqueViewCommand { get; }
+        public ICommand ShowInformationViewCommand { get; }
+        public ICommand ShowSettingViewCommand { get; }
 
         public MainViewModel()
         {
@@ -85,6 +88,9 @@ namespace WPF_LoginForm.ViewModels
 
             ShowHomeViewCommand = new ViewModelCommand(ExecuteShowHomeViewCommand);
             ShowLocalisationViewCommand = new ViewModelCommand(ExecuteShowLocalisationCommand);
+            ShowHistoriqueViewCommand = new ViewModelCommand(ExecuteShowHistoriqueViewCommand);
+            ShowInformationViewCommand = new ViewModelCommand(ExecuteShowInformationViewCommand);
+            ShowSettingViewCommand = new ViewModelCommand(ExecuteShowSettingViewCommand);
 
             ExecuteShowHomeViewCommand(null);
 
@@ -103,6 +109,27 @@ namespace WPF_LoginForm.ViewModels
             CurrentChildView = new HomeViewModel();
             Caption = "Tableau De Bord";
             Icon = IconChar.Home;
+        }
+        
+        private void ExecuteShowHistoriqueViewCommand(object obj)
+        {
+            CurrentChildView = new HistoriqueViewModel();
+            Caption = "Historique des évenements";
+            Icon = IconChar.Location;
+        }
+
+        private void ExecuteShowInformationViewCommand(object obj)
+        {
+            CurrentChildView = new InformationViewModel();
+            Caption = "Information sur votre robot";
+            Icon = IconChar.CircleInfo;
+        }
+
+        private void ExecuteShowSettingViewCommand(object obj)
+        {
+            CurrentChildView = new SettingViewModel();
+            Caption = "Parramétrage de votre Robot";
+            Icon = IconChar.Gear;
         }
 
         private void LoadCurrentUserData()

@@ -44,7 +44,7 @@
             <Border.Background>
                 <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
                     <GradientStop Color="#3963C8" Offset="0"/>
-                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#DBDCDD" Offset="0"/>
                 </LinearGradientBrush>
             </Border.Background>
 
@@ -143,7 +143,8 @@
                 <StackPanel Width="220"
                             Grid.Row="1"
                             Orientation="Vertical"
-                            Margin="0,35,0,0">
+                            HorizontalAlignment="Left"
+                            Margin="100,35,0,0">
 
                     <TextBlock Text="RoboManager"
                                Foreground="#2E3440"
@@ -283,13 +284,22 @@
 
                 </StackPanel>
 
+
+                <StackPanel Width="509"
+                            HorizontalAlignment="Right"
+                            Grid.Row="1"
+                            Orientation="Vertical"
+                            Margin="0,15,0,0">
+                    <Image Source="/Images/Robot.png" Height="434" Width="419"/>
+                </StackPanel>
+
                 <Grid Grid.Row="2">
                     <TextBlock HorizontalAlignment="Right"
                                VerticalAlignment="Top" Margin="0,21,10,0"
                                FontSize="10"
                                FontStyle="Normal"
                                FontWeight="Bold"
-                               Foreground="#4C566A">Version 1.0.4</TextBlock>
+                               Foreground="#4C566A">Version 1.1.4</TextBlock>
                 </Grid>
 
 
